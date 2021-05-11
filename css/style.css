@@ -298,7 +298,7 @@ main {
 
 .feedback {
   min-height: 448px;
-  background-image: url(../../img/feedback_bkg.jpg);
+  background-image: url(../img/feedback_bkg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -507,7 +507,7 @@ main {
 
 .promo__items {
   min-height: 764px;
-  background-image: url(../../img/promo_bcg.png);
+  background-image: url(../img/promo_bcg.png);
   background-repeat: no-repeat;
   background-position-x: -225px;
   background-position-y: bottom;
@@ -671,22 +671,22 @@ main {
 }
 
 .category__item_womens {
-  background-image: url(../../img/category_womens.jpg);
+  background-image: url(../img/category_womens.jpg);
   background-repeat: no-repeat;
 }
 
 .category__item_mens {
-  background-image: url(../../img/category_mens.jpg);
+  background-image: url(../img/category_mens.jpg);
   background-repeat: no-repeat;
 }
 
 .category__item_kids {
-  background-image: url(../../img/category_kids.jpg);
+  background-image: url(../img/category_kids.jpg);
   background-repeat: no-repeat;
 }
 
 .category__item_accesories {
-  background-image: url(../../img/category_accesories.jpg);
+  background-image: url(../img/category_accesories.jpg);
   background-repeat: no-repeat;
   margin-top: 30px;
   width: 100%;
