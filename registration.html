@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/32409339f3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header center">
+        <div class="header__items">
+            <a href="index.html" class="header__link header__link_logo"><img src="img/logo_header.png" alt="logo"></a>
+            <a href="#" class="header__link"><img src="img/search_header.svg" alt="search"></a>
+        </div>
+        <div class="header__items">
+            <div class="header__menu">
+                <input type="checkbox" id="menu">
+                <label for="menu" class="header__link"><img src="img/menu_header.svg" alt="menu"></label>
+                <nav class="menu">
+                    <div class="menu__overlay">
+                        <label for="menu"><img class="menu__cross-img" src="img/menu_cross.svg" alt="cross"></label>
+                        <p class="menu__title">MENU</p>
+                        <p class="menu__heading">MAN</p>
+                        <ul>
+                            <li class="menu__list"><a href="#" class="menu__link">Accessories</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Bags</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Denim</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">T-Shirts</a></li>
+                        </ul>
+                        <p class="menu__heading">WOMAN</p>
+                        <ul>
+                            <li class="menu__list"><a href="#" class="menu__link">Accessories</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Jackets & Coats</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Polos</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">T-Shirts</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Shirts</a></li>
+                        </ul>
+                        <p class="menu__heading">KIDS</p>
+                        <ul>
+                            <li class="menu__list"><a href="#" class="menu__link">Accessories</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Jackets & Coats</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Polos</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">T-Shirts</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Shirts</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Bags</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <a href="registration.html" class="header__link header__link_login"><img src="img/login_header.svg"
+                    alt="login"></a>
+            <a href="cart.html" class="header__link"><img src="img/cart.svg" alt="cart"></a>
+        </div>
+    </header>
+
+    <section class="breadcrumbs center">
+        <h1 class="breadcrumbs__title breadcrumbs__title_cart-reg">REGISTRATION</h1>
+    </section>
+
+    <main>
+        <section class="registration center">
+            <h2 class="hidden">login</h2>
+
+            <form class="login">
+                <h3 class="login__title">Your Name</h3>
+                <input type="text" class="login__input" placeholder="First Name" required>
+                <input type="text" class="login__input" placeholder="Last Name" required>
+                <div class="login__input-radio">
+                    <label><input type="radio" class="login__item-gender" name="gender" value="m">Male</label>
+                    <label><input type="radio" class="login__item-gender login__item-gender_female" name="gender"
+                            value="f">Female</label>
+                </div>
+                <h3 class="login__title">Login details</h3>
+                <input type="email" class="login__input" placeholder="Email" minlength="3" maxlength="254" required>
+                <input type="password" class="login__input" placeholder="Password" required>
+                <p class="login__text">Please use 8 or more characters, with at least 1 number and a mixture of
+                    uppercase and lowercase letters</p>
+                <button class="login__button">JOIN NOW <i class="fas fa-long-arrow-alt-right"></i></button>
+            </form>
+
+            <section class="loyalty">
+                <h2 class="loyalty__title">LOYALTY HAS ITS PERKS</h2>
+                <p class="loyalty__text">Get in on the loyalty program where you can earn points and unlock serious
+                    perks. Starting with these as soon as you join:</p>
+                <ul class="loyalty__items">
+                    <li class="loyalty__list"><i class="fas fa-check"></i>15% off welcome offer</li>
+                    <li class="loyalty__list"><i class="fas fa-check"></i>Free shipping, returns and exchanges on all
+                        orders</li>
+                    <li class="loyalty__list"><i class="fas fa-check"></i>$10 off a purchase on your birthday</li>
+                    <li class="loyalty__list"><i class="fas fa-check"></i>Early access to products</li>
+                    <li class="loyalty__list"><i class="fas fa-check"></i>Exclusive offers & rewards</li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <aside class="feedback center">
+        <section class="reviews">
+            <h2 class="hidden">reviews</h2>
+            <img src="img/reviews-photo.png" class="reviews__photo" alt="photo"><br>
+            “Vestibulum quis porttitor dui! Quisque viverra nunc mi, <span class="reviews__text">a pulvinar purus
+                condimentum“</span>
+        </section>
+
+        <section class="subscribe">
+            <h2>SUBSCRIBE</h2>
+            <p class="subscribe__text">FOR OUR NEWLETTER AND PROMOTION</p>
+            <form action="#" class="subscribe__form">
+                <input class="subscribe__input-email" type="email" placeholder="Enter Your Email" minlength="3"
+                    maxlength="254" required>
+                <input class="subscribe__input-submit" type="submit" value="Subscribe">
+            </form>
+        </section>
+    </aside>
+
+    <footer class="footer center">
+        <section class="footer__copyright">
+            <h2 class="hidden">copyright</h2>
+            <p>&copy; 2021 Brand All Rights Reserved.</p>
+        </section>
+        <section class="footer__socials">
+            <h2 class="hidden">company in social networks</h2>
+            <a href="#" class="footer__socials-item"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer__socials-item"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__socials-item"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="footer__socials-item"><i class="fab fa-twitter"></i></a>
+        </section>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+@import "var";
+@import "mixins";
+@import "fonts";
+@import "main";
+
+// Общее
+
+@import "blocks/header";
+@import "blocks/advantage";
+@import "blocks/feedback";
+@import "blocks/footer";
+
+// Главная
+
+@import "blocks/index-promo";
+@import "blocks/index-category";
+@import "blocks/index-product";
+
+
+// Каталог
+
+@import "blocks/catalog-breadcrumbs";
+@import "blocks/catalog-filter";
+@import "blocks/catalog-pagination";
+
+// Продукт
+
+@import "blocks/product-slide";
+@import "blocks/product-description";
+
+// Корзина
+
+@import "blocks/cart";
+
+// Регистрация
+
+@import "blocks/registration";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

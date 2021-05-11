@@ -1,0 +1,87 @@
+.promo {
+    background-color: #F1E4E6;
+    margin-bottom: 65px;
+
+    &__items {  
+        min-height: 764px;
+        background-image: url(../../img/promo_bcg.png);
+        background-repeat: no-repeat;
+        background-position-x: -225px;
+        background-position-y: bottom;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;
+    }
+    
+    &__heading {
+        width: 50%;
+        border-left: 12px solid $color-pink-3;
+        padding-left: 16px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+    }
+    
+    &__brand {
+        font-weight: 900;
+        font-size: 48px;
+        line-height: 58px;
+    }
+    
+    &__fashion {
+        color: $color-pink-3;
+    }
+}
+
+@keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+
+@media (max-width: 1192px) {
+    .promo {
+        margin-bottom: 20px;
+
+        &__items{
+            min-height: 367px;
+            background-size: contain;
+            background-position-x: -109px;
+        }
+        
+        &__heading {
+            font-size: 24px;
+            line-height: 29px;
+        }
+        
+        &__brand {
+            font-size: 44px;
+            line-height: 53px;
+        }
+    }
+    
+}
+
+@media (max-width: 787px) {
+    .promo {
+        margin-bottom: 64px;
+
+        &__items {
+            background-image: none;
+            justify-content: center;
+        }
+
+        &__heading {
+            padding-left: 15px;
+            width: 233px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        
+        &__brand {
+            font-size: 38px;
+            line-height: 46px;
+        }
+    }
+}
+
+
+
