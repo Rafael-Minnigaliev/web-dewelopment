@@ -1,0 +1,109 @@
+.feedback {
+    min-height: 448px;
+    background-image: url(../img/feedback_bkg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include flex;
+}
+
+.reviews {
+    width: 360px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #222224;
+    transition-duration: 0.4s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &__photo {
+        margin-bottom: 30px;
+    }
+    
+    &__text {
+        font-style: italic;
+    }
+}
+
+.subscribe {
+    width: 40%;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #222224;
+    @include flex-column;
+    align-items: center;
+
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        margin-top: 10px;
+    }
+    
+    &__form {
+        display: flex;
+        margin-top: 30px;
+    }
+    
+    &__input-email {
+        color: #222224;
+        border: none;
+        outline: none;
+        background-color: #E1E1E1;
+        padding: 22px 100px 22px 25px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px; 
+    }
+
+    &__input-email:hover {
+        transition-duration: 0.4s;
+        background-color: $color-white;
+    }
+    
+    &__input-submit {
+        color: $color-white;
+        border: none;
+        outline: none;
+        background-color: $color-pink-3;
+        padding: 22px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        cursor: pointer;
+    }
+
+    &__input-submit:hover {
+        transition-duration: 0.4s;
+        color: $color-pink-3;
+        background-color: $color-white;
+    }
+}
+
+@media (max-width: 1192px) {
+    .feedback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        background-position-x: -350px;
+    }
+
+    .reviews {
+        margin: 64px 0 48px;
+    }
+
+    .subscribe {
+        width: 557px;
+        margin-bottom: 140px;
+    }
+}
+
+@media (max-width: 787px) {
+    .subscribe {
+        margin-bottom: 110px;
+    }
+}
