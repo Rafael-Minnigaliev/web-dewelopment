@@ -1,0 +1,117 @@
+.header {
+    background-color: #222;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    position: relative;
+    @include flex;
+
+    &__items {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__link {
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+        transition-duration: 0.1s;
+    }
+
+    &__link:hover {
+        transform: scale(1.2);
+    }
+
+    &__link_logo {
+        margin-right: 40px;
+    }
+
+    &__link_login {
+        margin: 0 32px;
+    }
+}
+
+.menu {
+    position: absolute;
+    right: 0px;
+    top: 78px;
+    width: 232px;
+    min-height: 764px;
+    padding: 37px 34px;
+    box-sizing: border-box;
+    background-color: $color-white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    z-index: 1;
+
+    &__overlay {
+        position: relative;
+    }
+
+    &__cross-img{
+        position: absolute;
+        display: block;
+        top: -20px;
+        left: 167px;
+        cursor: pointer;
+    }
+
+    &__cross-img:hover{
+        transform: rotate(180deg);
+        transition-duration: 0.2s;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 24px;
+    }
+
+    &__heading {
+        font-size: 14px;
+        line-height: 17px;
+        color: #F16D7F;
+        margin: 20px 0 12px;
+    }
+
+    &__list {
+        margin-bottom: 11px;
+        list-style-type: none;
+        margin-left: 22px;
+    }
+
+    &__link {
+        display: block;
+        font-size: 14px;
+        line-height: 17px;
+        color: #6F6E6E;
+        text-decoration: none;
+        transition-duration: 0.1s;
+    }
+
+    &__link:hover {
+        transform: scale(1.1);
+    }
+}
+
+#menu {
+    display: none;
+}
+
+#menu:checked ~ .menu {
+    transform: scaleX(1);
+}
+
+@media (max-width: 787px) {
+    .header {
+        &__link:nth-child(3) {
+            display: none;
+        }
+
+        &__link_login {
+            display: none;
+        }
+    }
+}

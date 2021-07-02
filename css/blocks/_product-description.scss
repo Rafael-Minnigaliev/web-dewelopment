@@ -1,0 +1,217 @@
+#color {
+    display: none;
+
+    &:checked ~ .description__color{
+        transform: scaleY(1);
+    }
+
+    &:checked ~ .description__sort-title {
+        background-image: url(../img/sort-up.svg);
+    }
+}
+
+#size-product {
+    display: none;
+
+    &:checked ~ .description__size{
+        transform: scaleY(1);
+    }
+
+    &:checked ~ .description__sort-title {
+        background-image: url(../img/sort-up.svg);
+    }
+}
+
+#quantity {
+    display: none;
+
+    &:checked ~ .description__quantity{
+        transform: scaleY(1);
+    }
+
+    &:checked ~ .description__sort-title {
+        background-image: url(../img/sort-up.svg);
+    }
+}
+
+.description {
+    background-color: white;
+    min-height: 400px;
+    position: relative;
+    top: -66px;
+    border: 1px solid #EAEAEA;
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    padding: 64px 0;
+    box-sizing: border-box;
+    margin-bottom: 62px;
+
+    &__collection {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-pink-3;
+    }
+    
+    &__devider {
+        margin: 12px 0;
+    }
+    
+    &__title {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #4D4D4D;
+        margin-bottom: 36px;
+    }
+    
+    &__text {
+        max-width: 552px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #5E5E5E;
+    }
+    
+    &__price {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: $color-pink-1;
+        padding: 32px 280px 64px;
+        border-bottom: 1px solid #EAEAEA;
+    }
+
+    &__sort {
+        display: flex;
+        font-size: 14px;
+        line-height: 17px;
+        color: #6F6E6E;
+        margin: 64px 0 48px;
+    }
+
+    &__sort-items {
+        position: relative;
+    }
+    
+    &__sort-title {
+        background-image: url(../img/sort.svg);
+        background-repeat: no-repeat;
+        padding-right: 40px;
+        cursor: pointer;
+    }
+    
+    &__sort-title_color {
+        background-position: 116px 6px;
+    }
+
+    &__color {
+        position: absolute;
+        margin-top: 10px;
+        padding: 10px;
+        box-shadow: $shadow;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition-duration: 0.3s;
+    }
+    
+    &__sort-title_size {
+        background-position: 97px 6px;
+    }
+
+    &__size {
+        position: absolute;
+        margin-top: 10px;
+        padding: 10px;
+        box-shadow: $shadow;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition-duration:  0.3s;
+    }
+    
+    &__sort-title_quantity {
+        background-position: 77px 6px;
+    }
+
+    &__quantity {
+        position: absolute;
+        margin-top: 10px;
+        padding: 10px;
+        box-shadow: $shadow;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition-duration: 0.3s;
+    }
+    
+    &__button{
+        background-color: $color-white;
+        border: 1px solid $color-pink-2;
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-pink-2;
+        padding: 15px 57px 9px 24px;
+        display: flex;
+        cursor: pointer;
+    }
+    
+    &__button-cart {
+        margin-right: 23px;
+        fill: $color-pink-2;
+    }
+    
+    &__button:hover {
+        background-color: $color-pink-2;
+        color: $color-white;
+        transition: 0.4s;
+    }
+    
+    &__button:hover svg {
+        fill: $color-white;
+        transition: 0.4s;
+    }
+}
+
+@media (max-width: 1192px) {
+    .description {
+        position: none;
+        top: 0;
+    }
+    
+    .center_description {
+        padding: 0;
+    }
+}
+
+@media (max-width: 787px) {
+    .description {
+        padding: 64px 24px;
+
+        &__title {
+            margin-bottom: 32px;
+        }
+
+        &__price {
+            padding: 32px 60px;
+        }
+
+        &__sort {
+            margin: 48px 0 64px;
+            font-size: 10px;
+            line-height: 12px;
+        }
+
+        &__sort-title_color {
+            background-position: 86px 3px;
+        }
+
+        &__sort-title_size {
+            background-position: 73px 3px;
+        }
+
+        &__sort-title_quantity {
+            background-position: 59px 3px;
+        }
+    }
+}
