@@ -1,18 +1,22 @@
 'use strict'
 
-import GoodCart from "./GoodCart.js";
+import GoodsList from "./GoodsList.js";
 
-export default class Cart {
-    constructor(goods) {
-        this._data = goods.map(item => new GoodCart(item));
+export default class Cart extends GoodsList {
+    constructor(goodData) {
+        super(goodData);
     }
 
-    incrQuantity(quantity) {
-        return quantity += 1;
+    getPrice() {
+        return this.goods.reduce((acc, good) => acc + good.price, 0)
     }
 
-    remove(id) {
-        const index = this._data.findIndex(good => good.id === id);
-        this._data.splice(index - 1, 1);
+    add(newGood) {
+        const oldGood = this.goods.find(good => good.id === newGood.id);
+        if (oldGood) {
+            oldGood.add()
+        } else {
+            this.goods.push(newGood);
+        }
     }
 }

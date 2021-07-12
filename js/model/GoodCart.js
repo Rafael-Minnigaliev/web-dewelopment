@@ -1,17 +1,19 @@
 'use strict'
 
-import idGenerator from "../utlits/idGenerator.js";
+import Good from "./Good.js";
 
-export default class GoodCart {
-    constructor({ title, price, quantity, img1 }) {
-        this.id = idGenerator();
-        this.title = title;
-        this._price = price;
+export default class GoodCart extends Good {
+    constructor({ title, description, _price, id, img1, img2 }, quantity = 1) {
+        super({ title, description, price: _price, img1, img2 });
         this.quantity = quantity;
-        this.img = img1;
+        this.id = id;
     }
 
-    getPrice() {
-        return this._price;
+    get price() {
+        return this._price * this.quantity;
+    }
+
+    add() {
+        this.quantity++;
     }
 }

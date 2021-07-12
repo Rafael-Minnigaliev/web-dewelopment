@@ -12,7 +12,11 @@ export default class Good {
         this.img2 = img2;
     }
 
-    getPrice() {
+    get price() {
         return this._price;
+    }
+
+    set price(value) {
+        this._price = value;
     }
 }
