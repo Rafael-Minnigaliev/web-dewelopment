@@ -16,7 +16,12 @@ function addToCart(id) {
 }
 
 
-console.log(API.fetch());
+console.log(API.fetch()); //Выводится промис
+
+API.fetch().then((data) => {
+    console.log(data);  //выводится то что нужно но если поставить return функция все равно возвращает промис.
+})
+
 const goodList = new GoodsList(API.fetch());
 
 const cart = new Cart([]);
