@@ -5,7 +5,9 @@ import Card from "./view/Card.js";
 import Cart from "./model/Cart.js";
 import GoodsList from "./model/GoodsList.js";
 import GoodCart from "./model/GoodCart.js";
+import Email from "./view/validationEmail.js";
 
+Email.validEmail();
 
 API.fetch().then((data) => {
     const goodList = new GoodsList(data);
