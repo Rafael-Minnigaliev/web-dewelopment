@@ -2,7 +2,7 @@
 
 export default {
     validEmail() {
-        const exEmail = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;
+        const exEmail = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;    //Рег. выражение для почты.
         const $formEmail = document.querySelector('.subscribe__form');
         const $submitEmail = $formEmail.querySelector('.subscribe__input-submit');
         const $email = $formEmail.querySelector('.subscribe__input-email');
@@ -16,7 +16,7 @@ export default {
                 $formEmail.querySelector('.subscribe__input-error').style.display = '';
             } else {
                 $email.value = "";
-                $email.style.cssText = 'border: 2px solid red;';
+                $email.style.cssText = 'border: 2px solid #F16D7F;';
                 $formEmail.style.position = 'relative';
                 $formEmail.querySelector('.subscribe__input-error').style.display = 'block';
             }

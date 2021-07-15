@@ -132,8 +132,9 @@ main {
 .header__cart-counter {
   position: absolute;
   color: #FFF;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 17px;
+  font-weight: 700;
   text-align: center;
   width: 20px;
   height: 20px;
@@ -434,7 +435,7 @@ main {
 .subscribe__input-error {
   display: none;
   position: absolute;
-  color: red;
+  color: #F16D7F;
   left: 27px;
   top: 70px;
   font-weight: 500;
