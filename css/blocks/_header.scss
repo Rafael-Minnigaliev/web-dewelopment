@@ -28,6 +28,28 @@
     &__link_login {
         margin: 0 32px;
     }
+
+    &__link_cart {
+        position: relative;
+    }
+
+    &__cart-counter {
+        position: absolute;
+        color: $color-white;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        background-color:#F16D7F;
+        border-radius: 11px;
+        left: 22px;
+        top: -10px;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .menu {

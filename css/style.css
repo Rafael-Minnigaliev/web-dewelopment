@@ -125,6 +125,34 @@ main {
   margin: 0 32px;
 }
 
+.header__link_cart {
+  position: relative;
+}
+
+.header__cart-counter {
+  position: absolute;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  background-color: #F16D7F;
+  border-radius: 11px;
+  left: 22px;
+  top: -10px;
+  padding: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .menu {
   position: absolute;
   right: 0px;
