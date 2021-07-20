@@ -181,6 +181,20 @@ Vue.component('good-list', {
     }
 })
 
+Vue.component('loading-error', {
+    template: `<section class="product center">
+    <div class="product__header">
+        <h2 class="product__heading">Fetured Items</h2>
+        <p class="product__text">Shop for items based on what we featured in this week</p>
+    </div>
+    <div class="product__cards">
+            <h2 class="product__heading" style="color: red; margin-bottom: 40px;">«Не удаётся выполнить запрос к серверу»</h2>
+    </div>
+</section>`,
+
+    props: ['list'],
+})
+
 Vue.component('advantage', {
     template: `<section class="advantage center">
     <h2 class="hidden">advantages</h2>
@@ -339,7 +353,8 @@ Vue.component('index-page', {
         <promo></promo>
         <category></category>
         <search-list v-if="search_list != 0" v-bind:search_list="search_list" @add-to-cart="addToCartHandler"></search-list>
-        <good-list v-bind:list="list" @add-to-cart="addToCartHandler"></good-list>
+        <good-list v-if="list.length !== 0" v-bind:list="list" @add-to-cart="addToCartHandler"></good-list>
+        <loading-error v-if="list.length === 0" v-bind:list="list"></loading-error>
         <advantage></advantage>
         <feedback></feedback>
         <site-footer></site-footer>
