@@ -280,16 +280,22 @@ Vue.component('cart-card', {
             Color: Red <br>
             Size: Xl <br>
             Quantity:<input class="product-cart__quantity-input" type="number" name="quantity" min="1"
-                max="10" required placeholder="1">
+                max="10" required value="{{good.quantity}}">
         </form>
     </div>
-    <div class="product-cart__close">
+    <button class="product-cart__close" @click="deleteCardHandler" style="background-color: #fff; border: none;">
         <i class="fas fa-times"></i>
-    </div>
+    </button>
 </div>`,
 
 
-    props: ['good']
+    props: ['good'],
+
+    methods: {
+        deleteCardHandler() {
+            this.$emit('delete-cart', this.good.id)
+        }
+    }
 })
 
 Vue.component('cart-good-list', {
@@ -298,7 +304,7 @@ Vue.component('cart-good-list', {
         <h2 class="hidden">Products-cart</h2>
         
             <h1 v-if="cart.length == '0'">Корзина пуста</h1>
-            <cart-card v-for="good of cart" v-bind:good="good"></cart-card>
+            <cart-card v-for="good of cart" v-bind:good="good" @delete-cart="deleteCart"></cart-card>
 
         <div class="cart-buttons">
                 <button class="cart-buttons__button">CLEAR SHOPPING CART</button>
@@ -314,6 +320,10 @@ Vue.component('cart-good-list', {
     methods: {
         quant() {
             this.$emit('rrr')
+        },
+
+        deleteCart(id) {
+            this.$emit('delete-cart', id)
         }
     },
 })
@@ -375,13 +385,17 @@ Vue.component('cart-page', {
     template: `<div>
     <header-site @go-to="goToHandler" v-bind:count="cart.length" v-bind:carrent_page="carrent_page"></header-site>
     <breadcrumbs></breadcrumbs>
-    <cart-good-list v-bind:cart="cart"></cart-good-list>
+    <cart-good-list v-bind:cart="cart"  @delete-cart="deleteCart"></cart-good-list>
     <feedback></feedback>
     <site-footer></site-footer>
 </div>`,
     methods: {
         goToHandler(target) {
             this.$emit('go-to', target)
+        },
+
+        deleteCart(id) {
+            this.$emit('delete-cart', id)
         }
     },
 
@@ -396,52 +410,58 @@ const app = new Vue({
         is_active: false,
         value: '',
         list: [{
-            "id": 1,
-            "title": "ELLERY X M'O CAPSULE",
-            "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
-            "price": 52,
-            "img1": "img/product_1.webp",
-            "img2": "img/product_1.jpg"
+            id: 1,
+            title: "ELLERY X M'O CAPSULE",
+            description: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            price: 52,
+            img1: "img/product_1.webp",
+            img2: "img/product_1.jpg",
+            quantity: 1
         },
         {
-            "id": 2,
-            "title": "ELLERY X M'O CAPSULE",
-            "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
-            "price": 52,
-            "img1": "img/product_2.webp",
-            "img2": "img/product_2.jpg"
+            id: 2,
+            title: "ELLERY X M'O CAPSULE",
+            description: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            price: 52,
+            img1: "img/product_2.webp",
+            img2: "img/product_2.jpg",
+            quantity: 1
         },
         {
-            "id": 3,
-            "title": "ELLERY X M'O CAPSULE",
-            "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
-            "price": 52,
-            "img1": "img/product_3.webp",
-            "img2": "img/product_3.jpg"
+            id: 3,
+            title: "ELLERY X M'O CAPSULE",
+            description: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            price: 52,
+            img1: "img/product_3.webp",
+            img2: "img/product_3.jpg",
+            quantity: 1
         },
         {
-            "id": 4,
-            "title": "ELLERY X M'O CAPSULE",
-            "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
-            "price": 52,
-            "img1": "img/product_4.webp",
-            "img2": "img/product_4.jpg"
+            id: 4,
+            title: "ELLERY X M'O CAPSULE",
+            description: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            price: 52,
+            img1: "img/product_4.webp",
+            img2: "img/product_4.jpg",
+            quantity: 1
         },
         {
-            "id": 5,
-            "title": "ELLERY X M'O CAPSULE",
-            "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
-            "price": 52,
-            "img1": "img/product_5.webp",
-            "img2": "img/product_5.jpg"
+            id: 5,
+            title: "ELLERY X M'O CAPSULE",
+            description: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            price: 52,
+            img1: "img/product_5.webp",
+            img2: "img/product_5.jpg",
+            quantity: 1
         },
         {
-            "id": 6,
-            "title": "ELLERY X M'O CAPSULE",
-            "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
-            "price": 52,
-            "img1": "img/product_6.webp",
-            "img2": "img/product_6.jpg"
+            id: 6,
+            title: "ELLERY X M'O CAPSULE",
+            description: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            price: 52,
+            img1: "img/product_6.webp",
+            img2: "img/product_6.jpg",
+            quantity: 1
         }],
         cart: [],
         search_list: []
@@ -458,7 +478,7 @@ const app = new Vue({
 
         addToCartHandler(id) {
             const good = this.list.find(item => item.id === id);
-            this.cart.push(good);
+            this.cart.push(good)
             fetch('/cart', {
                 method: 'POST',
                 headers: {
@@ -481,6 +501,20 @@ const app = new Vue({
                     this.search_list = [];
                 }
             }
+        },
+
+        deleteCart(id) {
+            const good = this.cart.find(item => item.id === id);
+            this.cart = this.cart.filter(item => item.id !== id);
+            fetch('/cart', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(good)
+            })
         }
     }
 })

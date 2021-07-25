@@ -23,10 +23,9 @@ app.get('/cart', (req, res) => {
 
 app.post('/cart', jsonParser, (req, res) => {
     fs.readFile('./data/cart.json', 'utf8', (err, data) => {
-        const cart = JSON.parse(data);
+        let cart = JSON.parse(data);
 
         const item = req.body;
-
         cart.push(item);
 
         fs.writeFile('./data/cart.json', JSON.stringify(cart), (err) => {
@@ -35,7 +34,18 @@ app.post('/cart', jsonParser, (req, res) => {
     });
 });
 
+app.delete('/cart', jsonParser, (req, res) => {
+    fs.readFile('./data/cart.json', 'utf8', (err, data) => {
+        let cart = JSON.parse(data);
 
+        const item = req.body;
+        cart = cart.filter(good => good.id !== item.id);
+
+        fs.writeFile('./data/cart.json', JSON.stringify(cart), (err) => {
+            console.log('done');
+        });
+    });
+});
 
 
 app.listen(3000, () => {
