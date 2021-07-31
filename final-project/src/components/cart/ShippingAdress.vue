@@ -19,26 +19,17 @@
         placeholder="GET A QUOTE"
       />
     </div>
-    <div class="checkout">
-      <h2 class="hidden">Checkout</h2>
-      <p class="checkout__sub-total">
-        SUB TOTAL <span class="checkout__price-checkout">$900</span>
-      </p>
-      <p class="checkout__grand-total">
-        GRAND TOTAL <span class="checkout__price-checkout">$900</span>
-      </p>
-      <hr class="checkout__line" />
-      <input
-        type="submit"
-        class="checkout__submit"
-        value="PROCEED TO CHECKOUT"
-      />
-    </div>
+    <TotalPrice />
   </form>
 </template>
 
 <script>
+import TotalPrice from "@/components/cart/TotalPrice.vue";
+
 export default {
   name: "ShippingAdress",
+  components: {
+    TotalPrice,
+  },
 };
 </script>
