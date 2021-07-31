@@ -1,0 +1,56 @@
+.breadcrumbs {
+    min-height: 148px;
+    background-color: #F8F3F4;
+    @include flex;
+
+    &__title {
+        font-size: 24px;
+        line-height: 29px;
+        color: $color-pink-3;
+        font-weight: 400;
+    }
+
+    &__items {
+        display: flex;
+    }
+    
+    &__link {
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #636363;
+        cursor: pointer;
+        margin-right: 3px;
+        transition: 0.1s;
+    }
+    
+    &__link:hover { 
+        transform: scale(1.1);
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    &__link_new-arrivals {
+        color: $color-pink-3;
+    }
+}
+
+@media (max-width: 787px) {
+    .breadcrumbs{
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &__title {
+            margin-top: 24px;
+        }
+
+        &__title_cart-reg {
+            margin-top: 60px;
+        }
+
+        &__items {
+            margin-top: 32px;
+        }
+    }
+}
