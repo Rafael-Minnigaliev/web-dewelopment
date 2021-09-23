@@ -1,0 +1,55 @@
+.advantage {
+    min-height: 364px;
+    background-color: #222;
+    margin-top: 95px;
+    @include flex;
+
+    &__heading{
+        font-size: 19.96px;
+        line-height: 24px;
+        margin: 28px 0 16px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 40px;
+        font-weight: 300;
+        font-size: 13.972px;
+        line-height: 17px;
+        text-align: center;
+        color: #FBFBFB;
+        transition-duration: 0.3s;
+    }
+
+    &__item:hover {
+        transform: scale(1.2);
+    }
+
+    &__item_sale {
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 50px;
+    }
+}
+
+@media (max-width: 1192px) {
+    .advantage {
+        margin-top: 64px;
+        @include flex-column;
+        align-items: center;
+        padding-bottom: 64px;
+
+        &__item {
+            width: 360px;
+            margin-top: 48px;
+        }
+    }
+}
+
+@media (max-width: 787px) {
+    .advantage {
+        margin-top: 0px;
+    }
+}

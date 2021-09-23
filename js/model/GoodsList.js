@@ -1,30 +1,35 @@
 'use strict'
 
-import Good from "./Good.js";
+import eventEmmiter from "../helpers/eventEmmiter.js";
 
 export default class GoodsList {
-    constructor(goods) {
-        this.goods = goods.map(item => new Good(item));
+    constructor() {
+        this._goodList = [];
+        this._eventEmmiter = eventEmmiter;
     }
 
-    get() {
-        return this.goods;
-    }
-
-    getById(id) {
-        return this.goods.find(good => good.id === id);
-    }
-
-    getQuantity() {
-        return this.goods.reduce((acc, good) => acc + good.quantity, 0);
+    load(callback, goodClass) {
+        callback().then(data => {
+            this._goodList = data.map(item => new goodClass(item));
+            this._eventEmmiter.emit('loaded');
+        })
     }
 
     add(good) {
-        this.goods.push(good);
+        this._goodList.push(good);
+    }
+
+    get(id) {
+        return this._goodList.find(good => good.id == id);
+    }
+
+    getAll() {
+        return this._goodList;
     }
 
     remove(id) {
-        const index = this.goods.findIndex(good => good.id === id);
-        this.goods.splice(index - 1, 1);
+        this._goodList = this._goodList.filter(good => good.id !== id)
     }
+
 }
+

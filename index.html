@@ -21,7 +21,7 @@
             </a>
             <a href="#" class="header__link"><img src="img/search_header.svg" alt="search"></a>
         </div>
-        <div class="header__items">
+        <div class="header__items header__items_right">
             <div class="header__menu">
                 <input type="checkbox" id="menu">
                 <label for="menu" class="header__link"><img src="img/menu_header.svg" alt="menu"></label>
@@ -58,7 +58,8 @@
             </div>
             <a href="registration.html" class="header__link header__link_login"><img src="img/login_header.svg"
                     alt="login"></a>
-            <a href="cart.html" id="cart-bt" class="header__link"><img src="img/cart.svg" alt="cart"></a>
+            <a href="cart.html" id="cart-btn" class="header__link header__link_cart"><img src="img/cart.svg"
+                    alt="cart"></a>
         </div>
     </header>
 
@@ -132,9 +133,10 @@
             <h2>SUBSCRIBE</h2>
             <p class="subscribe__text">FOR OUR NEWLETTER AND PROMOTION</p>
             <form action="#" class="subscribe__form">
-                <input class="subscribe__input-email" type="email" placeholder="Enter Your Email" minlength="3"
+                <input class="subscribe__input-email" value="" type="email" placeholder="Enter Your Email" minlength="3"
                     maxlength="254" required>
                 <input class="subscribe__input-submit" type="submit" value="Subscribe">
+                <span class="subscribe__input-error">Ошибка, повторите ввод!</span>
             </form>
         </section>
     </aside>

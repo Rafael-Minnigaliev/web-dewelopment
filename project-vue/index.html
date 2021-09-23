@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/32409339f3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <index-page v-if="carrent_page == 'index'" @go-to="goToHandler" v-bind:carrent_page="carrent_page"
+            v-bind:search_list="search_list" v-bind:is_active="is_active" v-bind:value="value" v-bind:cart="cart"
+            v-bind:list="list" @add-to-cart="addToCartHandler" @input-search="inputSearch" @search="search">
+        </index-page>
+        <cart-page v-if="carrent_page == 'cart'" @go-to="goToHandler" v-bind:carrent_page="carrent_page"
+            v-bind:cart="cart">
+        </cart-page>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
