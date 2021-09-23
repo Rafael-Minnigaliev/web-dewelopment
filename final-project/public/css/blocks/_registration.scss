@@ -1,0 +1,156 @@
+.registration {
+    display: flex;
+    justify-content: space-between;
+    margin: 64px 0 96px;
+}
+
+.login {
+    width: 360px;
+    @include flex-column;
+
+    &__title {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+    
+    &__input {
+        margin-top: 20px;
+        padding: 13px 17px 16px;
+        outline: none;
+        border: 1px solid #A4A4A4;
+    }
+
+    &__input:hover {
+        transition-duration: 0.2s;
+        border: 2px solid #A4A4A4;
+        padding: 12px 16px 15px;
+    }
+
+    
+    &__input::placeholder {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #B1B1B1;
+    }
+    
+    &__input-radio {
+        margin: 31px 0 33px;
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 13px;
+    }
+    
+    &__item-gender {
+        margin-right: 10px;
+    }
+    
+    &__item-gender_female {
+        margin-left: 20px;
+    }
+    
+    &__text {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #B1B1B1;
+        margin: 15px 0 39px;
+    }
+    
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 167px;
+        padding: 16px 10px 17px;
+        background-color: $color-pink-3;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-white;
+        border: 1px solid $color-pink-3;
+    }
+
+    &__button:hover {
+        transition-duration: 0.4s;
+        background-color: $color-white;
+        color: $color-pink-3;
+    }
+
+    &__button:hover .fa-long-arrow-alt-right{
+        color: $color-pink-3;
+    }
+
+}
+
+.fa-long-arrow-alt-right {
+    margin-left: 20px;
+    font-size: 20px;
+    line-height: 17px;
+    color: $color-white;
+}
+
+.loyalty {
+    max-width: 652px;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+
+    &__title {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+    }
+    
+    &__text {
+        margin: 22px 0 21px;
+    }
+    
+    &__list {
+        margin-bottom: 16px;
+        list-style-type: none;
+    }
+
+    &__list:hover {
+        transition-duration: 0.2s;
+        transform: scale(1.05);
+    }
+}
+
+.fa-check {
+    font-size: 24px;
+    margin-right: 22px;
+}
+
+@media (max-width: 1192px) {
+    .registration {
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .login {
+        margin-right: 22px;
+    }
+
+    .loyalty {
+        font-size: 16px;
+        line-height: 19px;
+
+        &__title {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}
+
+@media (max-width: 787px) {
+    .registration {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login {
+        margin: 0 0 40px;
+    }
+}
