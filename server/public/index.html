@@ -16,8 +16,8 @@
             v-bind:search_list="search_list" v-bind:is_active="is_active" v-bind:value="value" v-bind:cart="cart"
             v-bind:list="list" @add-to-cart="addToCartHandler" @input-search="inputSearch" @search="search">
         </index-page>
-        <cart-page v-if="carrent_page == 'cart'" @go-to="goToHandler" v-bind:carrent_page="carrent_page"
-            v-bind:cart="cart">
+        <cart-page v-if="carrent_page == 'cart'" @go-to="goToHandler" @delete-cart="deleteCart"
+            v-bind:carrent_page="carrent_page" v-bind:cart="cart">
         </cart-page>
     </div>
 
