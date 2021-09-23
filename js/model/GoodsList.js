@@ -11,13 +11,12 @@ export default class GoodsList {
         return this.goods;
     }
 
-    totalPrice() {
-        let sum = 0;
-        let quantity = 1;
-        for (let good of this.goods) {
-            sum += good.getPrice() * quantity;
-        }
-        return sum;
+    getById(id) {
+        return this.goods.find(good => good.id === id);
+    }
+
+    getQuantity() {
+        return this.goods.reduce((acc, good) => acc + good.quantity, 0);
     }
 
     add(good) {
